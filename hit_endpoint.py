@@ -1,10 +1,19 @@
 import requests
 import json
 
+
+# ok so if posts is not a member on the typed object on the other side, it will go through validation,
+# but won't be included on the other side when you call body.dict() or whatever. 
+# In other words, the object sent in req. body can be a superset of the defined
+# types like TS
+
+# also as expected, no problem w/ empty lists
+
 valid_data = {
     "id": "asdnaiosudn",
     "name": "bob",
     "age": 20,
+    # "posts": [],
 }
 
 # should be invalid b/c id is an int not a str 

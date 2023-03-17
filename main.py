@@ -16,6 +16,7 @@ class User(BaseModel):
     id: str
     name:str
     age: int
+    posts: list[Post]
 
 
 
